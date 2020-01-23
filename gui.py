@@ -10,6 +10,7 @@ from split_it_image import *
 from image_doc import *
 from PIL import Image
 import pytesseract
+import subprocess
 root = Tk()
 root.geometry('500x500')
 root.title("Hand Drawn")
@@ -121,7 +122,8 @@ def database():
    root.filename=''
    alert_popup('Completed','Your task has been completed..')
    remove11()
-   os.startfile(name1) 
+#    os.startfile(name1)  # For windows
+   subprocess.call(["xdg-open", name1]) # For linux
       
 #def NewFile():
     #print ("New File!")
